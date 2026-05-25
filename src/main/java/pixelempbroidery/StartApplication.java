@@ -12,7 +12,7 @@ public class StartApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("startBanner.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Піксельна вишивка!");
+        stage.setTitle("Піксельна вишивка. Топчий Віолетта");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
