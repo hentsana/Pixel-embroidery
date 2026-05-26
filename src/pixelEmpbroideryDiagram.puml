@@ -1,0 +1,57 @@
+@startuml
+
+class StartApplication {
+  +start(Stage stage)
+}
+
+class Launcher {
+  +main(String[] args)
+}
+
+class HelloController {
+  -welcomeText: Label
+  -startButton: Button
+  -previewCanvas: Canvas
+  +initialize(URL, ResourceBundle)
+  -loadStartNameDrawing()
+  +onHelloButtonClick()
+  -onStartClicked()
+}
+
+class EmbroideryDrawing {
+  -drawingCanvas: Canvas
+  -colorPicker: ColorPicker
+  -row: Spinner<Integer>
+  -col: Spinner<Integer>
+  -eraserButton: ToggleButton
+  -horizontalButton: ToggleButton
+  -verticalButton: ToggleButton
+  -bothButton: ToggleButton
+  -ROW: int
+  -COL: int
+  -RowAndCol: int[][]
+  -color: int
+  -erase: boolean
+  +initialize(URL, ResourceBundle)
+  -colorToARGB(Color): int
+  -handleMouse(double, double)
+  -inTheBorder(int, int): boolean
+  -symmetryPaint(int, int, int)
+  -sizeChange()
+  -cellSize(): double
+  -eraserToggle()
+  -savePNG()
+  -errorPNG(String)
+  -loadPNG()
+  -clearScrin()
+  -draw()
+  -argbToColor(int): Color
+}
+
+Launcher --> StartApplication
+StartApplication --> HelloController
+StartApplication --> EmbroideryDrawing
+HelloController ..|> Initializable
+EmbroideryDrawing ..|> Initializable
+
+@enduml

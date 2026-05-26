@@ -49,7 +49,7 @@ public class HelloController implements Initializable {
             for (int row = 0; row < rows; row++) {
                 for (int col = 0; col < cols; col++) {
                     int rgb = img.getRGB(col * scale + scale / 2, row * scale + scale / 2);
-                    if (rgb != 0xFF000000 && rgb != -16777216) {
+                    if (rgb != 0xFF000000) {
                         double a = ((rgb >> 24) & 0xFF) / 255.0;
                         double red = ((rgb >> 16) & 0xFF) / 255.0;
                         double green = ((rgb >> 8) & 0xFF) / 255.0;
@@ -69,14 +69,12 @@ public class HelloController implements Initializable {
 
     @FXML
     private void onStartClicked() throws IOException {
-        FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("mainBanner.fxml")
-        );
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("mainBanner.fxml"));
         Scene scene = new Scene(loader.load());
 
         Stage stage = (Stage) startButton.getScene().getWindow();
         stage.setScene(scene);
-        stage.setTitle("Редактор вишивки");
+        stage.setTitle("Редактор вишивки. Топчий Віолетта");
         stage.setResizable(false);
     }
 }

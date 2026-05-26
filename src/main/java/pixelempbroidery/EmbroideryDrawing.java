@@ -174,7 +174,7 @@ public class EmbroideryDrawing implements Initializable {
                 for (int col = 0; col < COL; col++) {
                     int rgb = img.getRGB(col * SCALE + SCALE / 2,
                             row * SCALE + SCALE / 2);
-                    RowAndCol[row][col] = (rgb == 0xFFFFFFFF || rgb == -1) ? 0 : rgb;
+                    RowAndCol[row][col] = (rgb == 0xFFFFFFFF) ? 0 : rgb;
                 }
             }
             drawingCanvas.setWidth(COL * cellSize());
